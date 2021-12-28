@@ -5,7 +5,6 @@ RUN yum install -y cmake gcc gcc-c++ \
 
 COPY ./pkg /home/pkg
 
-RUN cd /home/pkg && tar -zxf grpc-1.38.1.tar.gz \
-	&& cd /home/pkg/grpc-1.38.1/cmake && mkdir build && cd build && cmake ../.. && make -j6 && make install \
+RUN cd /home/pkg/grpc-1.38.1/cmake && mkdir build && cd build && cmake ../.. && make -j6 && make install \
 	&& cd /home/pkg/grpc-1.38.1/third_party/abseil-cpp/ && mkdir build && cd build && cmake .. && make -j6 && make install
 
